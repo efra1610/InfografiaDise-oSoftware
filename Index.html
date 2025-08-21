@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Diseño de Software</title>
+    <style>
+        /* Variables de colores y estilos */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Tarjetas de sección */
+        .section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        /* Grid para definiciones y principios */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background: var(--light);
+            border-radius: var(--radius);
+            padding: 1.2rem;
+            border-left: 4px solid var(--secondary);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .card:hover {
+            background: #e0f7fa;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Listas con iconos */
+        .styled-list {
+            list-style-type: none;
+        }
+
+        .styled-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .styled-list li:before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Técnicas de diseño */
+        .technique {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: var(--radius);
+        }
+
+        .technique-icon {
+            background: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Diseño para escalabilidad */
+        .scalability-item {
+            background: #e8f5e9;
+            padding: 1rem;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--success);
+        }
+
+        /* Diseño seguro */
+        .security-item {
+            background: #ffebee;
+            padding: 1rem;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Referencias */
+        .reference {
+            background: #f3e5f5;
+            padding: 1rem;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .technique {
+                flex-direction: column;
+            }
+            
+            .technique-icon {
+                margin-bottom: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Diseño de Software: Principios y Mejores Prácticas</h1>
+            <p>Una guía visual sobre los conceptos fundamentales del diseño de software basada en estándares IEEE y mejores prácticas de la industria</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Introducción -->
+        <section class="section">
+            <h2 class="section-title">¿Qué es el Diseño de Software?</h2>
+            <p>El Diseño de Software es una fase crucial en el desarrollo de aplicaciones que se encarga de conceptualizar y modelar la estructura de un sistema antes de su implementación. No es simplemente escribir código, sino construir el "cómo" se llevará a cabo el proyecto.</p>
+            <p>La arquitectura de software establecida durante esta fase es fundamental para la adaptabilidad, robustez, facilidad de mantenimiento y el éxito general de un sistema.</p>
+        </section>
+
+        <!-- Definiciones -->
+        <section class="section">
+            <h2 class="section-title">Definiciones de Diseño de Software</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3>Disciplina Emergente</h3>
+                    <p>La arquitectura de software es una disciplina emergente que ayuda a abstraer, conceptualizar y modelar óptimamente estilos y patrones para aplicarlos en la construcción de software.</p>
+                </div>
+                <div class="card">
+                    <h3>Fase del Ciclo de Vida</h3>
+                    <p>Es una subetapa dentro de la fase de diseño de cualquier metodología de desarrollo de software.</p>
+                </div>
+                <div class="card">
+                    <h3>Creación de un Modelo</h3>
+                    <p>El diseño crea la representación o modelo del software, proporcionando detalles sobre su arquitectura necesaria para la implementación del sistema.</p>
+                </div>
+                <div class="card">
+                    <h3>Guía para la Implementación</h3>
+                    <p>El resultado final es una guía para los programadores, traducida en una arquitectura de software que asegura un perfecto entendimiento entre colaboradores.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principios -->
+        <section class="section">
+            <h2 class="section-title">Principios Fundamentales del Diseño</h2>
+            <ul class="styled-list">
+                <li><strong>Abstracción:</strong> Representación de las características esenciales de un sistema.</li>
+                <li><strong>Acoplamiento y Cohesión:</strong> Minimizar la interdependencia entre módulos (acoplamiento suelto) y maximizar la relación de tareas dentro de un mismo módulo (alta cohesión).</li>
+                <li><strong>Adaptabilidad al Cambio:</strong> El diseño debe estructurarse para ser adaptable a futuros cambios.</li>
+                <li><strong>División y Conquista (Modularización):</strong> Descomponer el problema en componentes más pequeños y manejables.</li>
+                <li><strong>Encapsulamiento:</strong> Ocultar los detalles de implementación detrás de interfaces simples.</li>
+                <li><strong>Estructura Jerárquica/Capas:</strong> Organizar componentes en capas de abstracción y responsabilidad.</li>
+                <li><strong>Revisiones Formales Periódicas:</strong> Realizar revisiones regulares para minimizar errores conceptuales.</li>
+                <li><strong>Consistencia y Uniformidad:</strong> Cruciales para sistemas de gran tamaño.</li>
+            </ul>
+        </section>
+
+        <!-- Técnicas -->
+        <section class="section">
+            <h2 class="section-title">Técnicas y Actividades en el Proceso de Diseño</h2>
+            
+            <div class="technique">
+                <div class="technique-icon">1</div>
+                <div>
+                    <h3>Iteración Continua</h3>
+                    <p>El proceso de diseño es iterativo, refinando un diseño informal inicial con información adicional hasta lograr un resultado consistente y completo.</p>
+                </div>
+            </div>
+            
+            <div class="technique">
+                <div class="technique-icon">2</div>
+                <div>
+                    <h3>División y Asignación de Requerimientos</h3>
+                    <p>Dividir los requisitos del cliente en grupos afines (por funcionalidad, procesos, etc.) y asignarlos a subsistemas específicos.</p>
+                </div>
+            </div>
+            
+            <div class="technique">
+                <div class="technique-icon">3</div>
+                <div>
+                    <h3>Especificación de Funcionalidad e Interfaces</h3>
+                    <p>Determinar la funcionalidad de los subsistemas y especificar sus relaciones e interconexiones.</p>
+                </div>
+            </div>
+            
+            <div class="technique">
+                <div class="technique-icon">4</div>
+                <div>
+                    <h3>Modelado Arquitectónico</h3>
+                    <p>Utilizar lenguajes descriptores de arquitectura (ADL) para modelar la arquitectura resultante.</p>
+                </div>
+            </div>
+            
+            <div class="technique">
+                <div class="technique-icon">5</div>
+                <div>
+                    <h3>Vistas de Arquitectura</h3>
+                    <p>Emplear múltiples vistas (como el Modelo de Vistas 4+1) para abordar la arquitectura desde diferentes perspectivas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Escalabilidad -->
+        <section class="section">
+            <h2 class="section-title">Diseño para la Escalabilidad</h2>
+            
+            <div class="scalability-item">
+                <h3>Definir Objetivos de Escalabilidad</h3>
+                <p>Establecer metas cuantitativas y cualitativas (rendimiento, latencia, disponibilidad, confiabilidad, consistencia, seguridad) y métricas medibles.</p>
+            </div>
+            
+            <div class="scalability-item">
+                <h3>Escalado Horizontal</h3>
+                <p>Diseñar sistemas para escalar agregando más instancias de componentes o servicios.</p>
+            </div>
+            
+            <div class="scalability-item">
+                <h3>Sin Estado (Statelessness)</h3>
+                <p>Minimizar o eliminar el estado en el lado del servidor para facilitar el escalado horizontal.</p>
+            </div>
+            
+            <div class="scalability-item">
+                <h3>Mecanismos de Caché</h3>
+                <p>Implementar caché para reducir cálculos o recuperaciones de datos repetitivas.</p>
+            </div>
+            
+            <div class="scalability-item">
+                <h3>Tolerancia a Fallos</h3>
+                <p>Construir sistemas que manejen fallos de manera fluida (redundancia, replicación, failover).</p>
+            </div>
+            
+            <div class="scalability-item">
+                <h3>Patrones de Escalabilidad</h3>
+                <p>Implementar soluciones reutilizables como Balanceo de Carga y Base de Datos por Servicio.</p>
+            </div>
+            
+            <div class="scalability-item">
+                <h3>Uso Iterativo y Progresivo</h3>
+                <p>Al implementar patrones de diseño en microservicios, se recomienda ir "poco a poco", conociendo cada patrón e integrándolos mediante desarrollo iterativo.</p>
+            </div>
+        </section>
+
+        <!-- Seguridad -->
+        <section class="section">
+            <h2 class="section-title">Diseño Seguro (Secure-by-Design)</h2>
+            
+            <div class="security-item">
+                <h3>Prioridad Fundamental</h3>
+                <p>La seguridad de los clientes debe ser un objetivo empresarial fundamental desde antes de iniciar el desarrollo.</p>
+            </div>
+            
+            <div class="security-item">
+                <h3>Evaluación de Riesgos y Modelado de Amenazas</h3>
+                <p>Realizar evaluaciones de riesgo e incluir protecciones en los modelos de productos.</p>
+            </div>
+            
+            <div class="security-item">
+                <h3>Lenguajes Seguros para la Memoria</h3>
+                <p>Priorizar su uso siempre que sea posible (C#, Rust, Java, Go, Swift) para prevenir vulnerabilidades generalizadas.</p>
+            </div>
+            
+            <div class="security-item">
+                <h3>Componentes de Software Seguros</h3>
+                <p>Adquirir y mantener componentes bien protegidos de desarrolladores verificados.</p>
+            </div>
+            
+            <div class="security-item">
+                <h3>Pruebas de Seguridad (SAST/DAST)</h3>
+                <p>Utilizar herramientas de Análisis Estático y Dinámico de aplicaciones para detectar prácticas propensas a errores.</p>
+            </div>
+            
+            <div class="security-item">
+                <h3>Revisión de Código</h3>
+                <p>Asegurar que el código pase por una revisión por pares para mayor calidad.</p>
+            </div>
+            
+            <div class="security-item">
+                <h3>Defensa en Profundidad</h3>
+                <p>Diseñar la infraestructura de modo que el compromiso de un único control de seguridad no comprometa todo el sistema.</p>
+            </div>
+            
+            <div class="security-item">
+                <h3>Configuraciones Seguras por Defecto</h3>
+                <p>Los productos deben ser seguros "desde el primer momento" y sin costo adicional, habilitando automáticamente los controles de seguridad importantes.</p>
+            </div>
+            
+            <div class="security-item">
+                <h3>Transparencia y Rendición de Cuentas</h3>
+                <p>Compartir información sobre implementaciones seguras y asegurar que los avisos de vulnerabilidad (CVE) sean completos y precisos.</p>
+            </div>
+        </section>
+
+        <!-- Referencias -->
+        <section class="section">
+            <h2 class="section-title">Referencias IEEE</h2>
+            
+            <div class="reference">
+                <p>El Modelo de Vistas 4+1 fue definido en 1995 por Philippe Kruchten. Su "+1 Vista de escenarios" se utiliza para unir las otras cuatro vistas (Lógica, de Proceso, de Desarrollo y Física) mediante secuencias de interacciones.</p>
+                <p>Fuente: "Artículo publicado en IEEE Software 12(6), Noviembre 1995. Traducido por María Cecilia Bastarrica en Marzo 2006".</p>
+            </div>
+            
+            <p>Organismos reconocidos como IEEE, ISO, ACM e IBM no han presentado una definición única para las vistas de arquitectura, pero sus marcos de trabajo son respetados y utilizados como base.</p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Infografía sobre Diseño de Software - Basado en estándares IEEE y mejores prácticas</p>
+        </div>
+    </footer>
+</body>
+</html>
